@@ -3,7 +3,7 @@
 import webapp2
 from webapp2 import Route
 
-from handlers.handlers import FrontPage, Dashboard, HomePage, CommentHandler, JsonHandler
+from base_handler import BaseHandler
 
 ##########
 
@@ -14,13 +14,18 @@ config['webapp2_extras.sessions'] = {
 
 ##########
 
+class BasePage(BaseHandler):
+    
+    def get(self):
+        self.render('base.html')
+        
+    def post(self):
+        pass
+
+##########
+
 app = webapp2.WSGIApplication([
-      ('/', FrontPage),
-      ('/home', HomePage),
-      ('/comments', CommentHandler),
-      ('/dashboard', Dashboard),
-      Route('/json/<company>', handler = JsonHandler, name = 'json-item'),
-      Route('/dashboard/<item>', handler = Dashboard, name = 'dashboard-item')],
+      ('/', BasePage)],
       config = config, debug = True)
 
 if __name__ == '__main__':
