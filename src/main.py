@@ -1,5 +1,6 @@
 ##########
 
+import logging
 import webapp2
 from webapp2 import Route
 
@@ -21,11 +22,24 @@ class BasePage(BaseHandler):
         
     def post(self):
         pass
+        
+        
+class Transportation(BaseHandler):
+
+    def get(self, **kw):
+        
+        transport = kw['transportation']
+        
+        self.pjax(transport + ".html")
+        
+    def post(self):
+        pass
 
 ##########
 
 app = webapp2.WSGIApplication([
-      ('/', BasePage)],
+      ('/', BasePage),
+      Route('/transport/<transportation>', handler = Transportation),],
       config = config, debug = True)
 
 if __name__ == '__main__':

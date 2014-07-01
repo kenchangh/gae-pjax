@@ -24,6 +24,12 @@ class BaseHandler(webapp2.RequestHandler):
 	
     def render(self, template, **kw):
         self.write(self.render_str(template,**kw))
+        
+    def pjax(self, template):
+        if "X-PJAX" in self.request.headers:
+            self.render(template)
+        else:
+            self.render("base.html")
     
     def dispatch(self):
         # Get a session store for this request.
