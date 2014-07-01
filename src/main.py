@@ -28,8 +28,10 @@ class Transportation(BaseHandler):
 
     def get(self, **kw):
         
+        # Gets kw from trailing route
         transport = kw['transportation']
         
+        # Only renders html in div if pjax request
         self.pjax(transport + ".html")
         
     def post(self):
@@ -39,7 +41,7 @@ class Transportation(BaseHandler):
 
 app = webapp2.WSGIApplication([
       ('/', BasePage),
-      Route('/transport/<transportation>', handler = Transportation),],
+      Route('/transport/<transportation>', handler = Transportation)],
       config = config, debug = True)
 
 if __name__ == '__main__':
