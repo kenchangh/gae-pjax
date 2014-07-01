@@ -1,26 +1,10 @@
 
-
-
-Table of Content
-----------------
-- [Introduction](#intro)
-- [Installation](#install)
-- [Usage](#usage)
-- [License](#license)
-- [Support](#support)
-
-Introduction <a name='intro'></a>
+Pjax on Google App Engine
 --------------------------------
+This is just an example of a server setup of Pjax on Google App Engine (or Webapp2 to be precise).
 
-Installation <a name='install'></a>
-----------------------------------
+The templating engine used is Jinja2, don't think the templating engines will differ much from this.
 
-Usage <a name='usage'></a>
--------------------------
-
-License <a name='license'</a>
-----------------------------
-The following code has been released under the MIT License. See above for it.
 
 Support <a name='support'></a>
 ------------------------------
