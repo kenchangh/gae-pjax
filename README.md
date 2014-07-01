@@ -1,6 +1,5 @@
-
 Pjax on Google App Engine
---------------------------------
+=========================
 This is just an example of a server setup of Pjax on Google App Engine (or Webapp2 to be precise).
 
 The templating engine used is Jinja2, don't think the templating engines will differ much from this.
