@@ -30,11 +30,12 @@ class BaseHandler(webapp2.RequestHandler):
         if "X-PJAX" in self.request.headers:
             # Render the requested template in div FAST
             self.render(template, **kw)
+
         # User refreshes page or something else
         else:
             # TODO render base.html with included templates
             # This will reload the page
-            self.render("base.html")
+            self.render("base.html", **kw)
     
     def dispatch(self):
         # Get a session store for this request.

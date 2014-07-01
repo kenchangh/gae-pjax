@@ -28,11 +28,12 @@ class Transportation(BaseHandler):
 
     def get(self, **kw):
         
-        # Gets kw from trailing route
+        # Gets keyword from trailing route
         transport = kw['transportation']
         
         # Only renders html in div if pjax request
-        self.pjax(transport + ".html")
+        html = transport + ".html"
+        self.pjax(html, templates = [html])
         
     def post(self):
         pass
