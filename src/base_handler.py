@@ -25,9 +25,9 @@ class BaseHandler(webapp2.RequestHandler):
     def render(self, template, **kw):
         self.write(self.render_str(template,**kw))
         
-    def pjax(self, template):
+    def pjax(self, template, **kw):
         if "X-PJAX" in self.request.headers:
-            self.render(template)
+            self.render(template, **kw)
         else:
             self.render("base.html")
     
